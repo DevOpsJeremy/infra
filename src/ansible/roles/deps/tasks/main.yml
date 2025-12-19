@@ -1,0 +1,8 @@
+---
+- debug:
+    msg: "{{ 'blah' | test }}"
+
+#- name: Wait for collections to be installed
+#  ansible.builtin.wait_for:
+#    path: '{{ item }}'
+#  loop: '{{ deps_collections }}'

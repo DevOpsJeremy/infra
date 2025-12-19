@@ -1,0 +1,27 @@
+x-base: &base
+  image: ubuntu
+  volumes: [&working_dir_volume .:/root:rw]
+  user: root
+  working_dir: /root
+  env_file: [&base_env_file .env]
+
+x-ansible: &ansible
+  <<: *base
+  image: quay.io/ansible/awx-ee
+  working_dir: /root/src/ansible
+  environment:
+    ANSIBLE_CONFIG: /root/src/ansible/ansible.cfg
+    ANSIBLE_LOG_PATH: /var/log/ansible/ansible.log
+    ANSIBLE_COLLECTIONS_PATH: /root/.ansible/collections
+  volumes:
+    - *working_dir_volume
+    - ./.ansible:/root/.ansible
+    - ./src/ansible/log:/var/log/ansible:rw
+
+services:
+  galaxy:
+    <<: *ansible
+    command: [ansible-galaxy, install, -r, requirements.yml]
+  ansible:
+    <<: *ansible
+    command: [ansible-playbook, playbook.yml]

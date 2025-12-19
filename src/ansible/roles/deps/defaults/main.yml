@@ -1,0 +1,3 @@
+deps_collections_base: '{{ lookup("env", "ANSIBLE_COLLECTIONS_PATH") | default(ANSIBLE_HOME ~ "/collections") }}'
+deps_collections_root: '{{ deps_collections_base ~ "/ansible_collections" }}'
+

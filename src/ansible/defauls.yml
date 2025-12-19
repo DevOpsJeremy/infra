@@ -1,0 +1,4 @@
+deps_collections_root: "{{ (lookup('env', 'ANSIBLE_COLLECTIONS_PATH') | default(ANSIBLE_HOME ~ "/collections") ~ "/ansible_collections" }}"
+deps_collections:
+  - community.proxmox
+deps_collections_paths: {% for collection in deps_collections %} 
