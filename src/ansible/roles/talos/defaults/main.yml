@@ -1,0 +1,8 @@
+_talos_version: "{{ talos_version | default('latest') }}"
+_talos_arch: "{{ talos_arch | default('amd64') }}"
+_talos_node: "{{ talos_node | default('pox') }}"
+_talos_storage: "{{ talos_storage | default('local-lvm') }}"
+_talos_iso_filename: "{{ talos_iso_filename | default('talos-metal-' + _talos_arch + '.iso') }}"
+_talos_iso_storage: "{{ _talos_storage }}"
+_talos_iso_node: "{{ _talos_node }}"
+_talos_iso_download_url: "{{ talos_iso_download_url | default('https://github.com/siderolabs/talos/releases/downloads/v' + _talos_version + '/metal-' + _talos_arch + '.iso') }}"

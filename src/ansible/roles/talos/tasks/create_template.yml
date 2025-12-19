@@ -1,4 +1,8 @@
 ---
 - name: Download Talos image
-  proxmox_storage_file:
+  local.proxmox.proxmox_storage_file:
     content: iso
+    storage: "{{ _talos_iso_storage }}"
+    filename: "{{ _talos_iso_filename }}"
+    node: "{{ _talos_iso_node }}"
+    url: "{{ _talos_iso_download_url }}"

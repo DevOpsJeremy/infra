@@ -9,5 +9,5 @@
 
 - name: Wait for collections to be installed
   ansible.builtin.wait_for:
-    path: "{{ item | collection_to_path }}"
+    path: "{{ item | local.tools.collection_to_path }}"
   loop: "{{ deps_collections }}"

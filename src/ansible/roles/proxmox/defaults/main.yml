@@ -1,2 +1,3 @@
 ---
-proxmox_pools: "{{ pools | default([]) }}"
+proxmox_pools: "{{ proxmox_pools | default([]) }}"
+proxmox_storage: "{{ proxmox_storage | default('local-lvm') }}"

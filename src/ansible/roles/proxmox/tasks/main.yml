@@ -3,7 +3,3 @@
   community.proxmox.proxmox_pool:
     poolid: "{{ item }}"
   loop: "{{ proxmox_pools }}"
-
-- name: Configure storage
-  community.proxmox.proxmox_storage:
-  when: false
