@@ -1,4 +1,4 @@
-.PHONY: up test
+.PHONY: up test fix
 up: secrets.env
 	docker compose up --remove-orphans --force-recreate --build
 
