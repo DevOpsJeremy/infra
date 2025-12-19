@@ -1,5 +1,4 @@
 x-base: &base
-  image: ubuntu
   volumes: [&working_dir_volume .:/root:rw]
   user: root
   working_dir: /root
@@ -25,3 +24,6 @@ services:
   ansible:
     <<: *ansible
     command: [ansible-playbook, playbook.yml]
+  python:
+    <<: *base
+    build: src/python
