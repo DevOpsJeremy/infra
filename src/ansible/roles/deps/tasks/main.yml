@@ -2,8 +2,12 @@
 - name: Install pip modules
   ansible.builtin.pip:
     name: "{{ deps_pip_modules }}"
+  environment:
+    PIP_ROOT_USER_ACTION: ignore
+    PIP_DISABLE_PIP_VERSION_CHECK: "1"
+    PIP_NO_CACHE_DIR: "1"
 
 - name: Wait for collections to be installed
   ansible.builtin.wait_for:
-    path: '{{ item | collection_to_path }}'
-  loop: '{{ deps_collections }}'
+    path: "{{ item | collection_to_path }}"
+  loop: "{{ deps_collections }}"

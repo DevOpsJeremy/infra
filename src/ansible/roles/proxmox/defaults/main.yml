@@ -1,0 +1,2 @@
+---
+proxmox_pools: "{{ pools | default([]) }}"

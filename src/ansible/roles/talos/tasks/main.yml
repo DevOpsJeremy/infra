@@ -1,8 +1,4 @@
 ---
-- name: Create pool
-  community.proxmox.proxmox_pool:
-    poolid: talos
-
-- name: Create templates
-  community.proxmox.proxmox_node_info:
-
+- name: Create template
+  ansible.builtin.include_tasks:
+    file: create_template.yml

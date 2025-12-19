@@ -1,0 +1,4 @@
+---
+- name: Download Talos image
+  proxmox_storage_file:
+    content: iso
