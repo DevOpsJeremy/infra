@@ -1,3 +1,4 @@
 FROM python:3.13-alpine
 
-RUN pip install pytest ruff
+RUN --mount=type=bind,src=requirements.txt,dst=requirements.txt \
+  pip install -r requirements.txt
