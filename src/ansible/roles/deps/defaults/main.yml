@@ -1,1 +1,2 @@
 deps_collections: "{{ (lookup('file', 'requirements.yml') | from_yaml).collections | map(attribute='name') | list | default([]) }}"
+deps_pip_modules: "{{ pip_modules | default([]) }}"

@@ -1,5 +1,5 @@
 ---
-- name: Test
+- name: Configure Proxmox
   hosts: localhost
   roles:
-    - deps
+    - talos

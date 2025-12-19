@@ -1,6 +1,9 @@
 .PHONY: up test
-up:
+up: secrets.env
 	docker compose up --remove-orphans --force-recreate --build
+
+secrets.env:
+	touch secrets.env
 
 test:
 	docker compose run --remove-orphans --rm python ruff check

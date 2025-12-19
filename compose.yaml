@@ -2,7 +2,7 @@ x-base: &base
   volumes: [&working_dir_volume .:/root:rw]
   user: root
   working_dir: /root
-  env_file: [&base_env_file .env]
+  env_file: [&secrets_env_file secrets.env, &base_env_file env]
 
 x-ansible: &ansible
   <<: *base
@@ -25,7 +25,8 @@ services:
   ansible:
     <<: *ansible
     depends_on: [galaxy]
-    command: [ansible-playbook, configure.yml]
+    # TODO: Remove -v
+    command: [ansible-playbook, configure.yml, -vv]
 
   python:
     <<: *base

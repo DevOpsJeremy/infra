@@ -1,0 +1,8 @@
+---
+- name: Create pool
+  community.proxmox.proxmox_pool:
+    poolid: talos
+
+- name: Create templates
+  community.proxmox.proxmox_node_info:
+
