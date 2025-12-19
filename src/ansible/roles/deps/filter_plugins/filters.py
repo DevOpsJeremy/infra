@@ -18,7 +18,6 @@ def collection_to_path(
     :param collections_path: Base path where collections are stored.
     :return: Full filesystem path to the collection.
     """
-    from os.path import join, normpath
 
     namespace, name = collection_name.split(".")
     collection_path = join(collections_path, "ansible_collections", namespace, name)

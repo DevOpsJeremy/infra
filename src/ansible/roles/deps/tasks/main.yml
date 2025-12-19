@@ -1,7 +1,4 @@
 ---
-- debug:
-    msg: "{{ 'community.proxmox' | collection_to_path }}"
-
 - name: Wait for collections to be installed
   ansible.builtin.wait_for:
     path: '{{ item | collection_to_path }}'

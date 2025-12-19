@@ -1,2 +1,1 @@
-deps_collections:
-  - community.proxmox
+deps_collections: "{{ (lookup('file', 'requirements.yml') | from_yaml).collections | map(attribute='name') | list | default([]) }}"

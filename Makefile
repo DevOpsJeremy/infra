@@ -1,3 +1,9 @@
-.PHONY: up
+.PHONY: up test
 up:
-	docker compose up --force-recreate --build --watch --remove-orphans
+	docker compose up --remove-orphans --force-recreate --build --watch
+
+test:
+	docker compose run --remove-orphans --rm python ruff check
+	docker compose run --remove-orphans --rm python ruff format --check
+# 	docker compose run --remove-orphans --rm python pytest
+	docker compose run --remove-orphans --rm ansible ansible-lint ansible-lint

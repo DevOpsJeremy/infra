@@ -23,7 +23,12 @@ services:
     command: [ansible-galaxy, install, -r, requirements.yml]
   ansible:
     <<: *ansible
+    depends_on: [galaxy]
     command: [ansible-playbook, playbook.yml]
   python:
     <<: *base
     build: src/python
+  ansible-lint:
+    <<: *ansible
+    depends_on: [galaxy]
+    image: quay.io/ansible/creator-ee
