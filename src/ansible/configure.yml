@@ -2,6 +2,6 @@
 - name: Configure Proxmox
   hosts: localhost
   environment:
-    PROXMOX_VALIDATE_CERTS: False
+    PROXMOX_VALIDATE_CERTS: "False"
   roles:
     - talos

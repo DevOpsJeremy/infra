@@ -13,4 +13,4 @@ talos_storage: "{{ proxmox_storage }}"
 talos_node: "{{ proxmox_node }}"
 talos_version: 1.11.6
 talos_arch: amd64
-talos_iso_download_url: "https://github.com/siderolabs/talos/releases/downloads/v{{ talos_version }}/metal-{{ talos_arch }}.iso"
+talos_iso_download_url: https://github.com/siderolabs/talos/releases/downloads/v{{ talos_version }}/metal-{{ talos_arch }}.iso
