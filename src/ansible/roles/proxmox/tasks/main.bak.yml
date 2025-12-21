@@ -1,0 +1,5 @@
+---
+- name: Configure pools
+  community.proxmox.proxmox_pool:
+    poolid: "{{ item }}"
+  loop: "{{ proxmox_pools }}"
